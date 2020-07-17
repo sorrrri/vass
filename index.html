@@ -2,9 +2,101 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>백신 웹개발</title>
+
+    <link rel="stylesheet" href="src/css/base.css">
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
+<div class="container">
+    <header>
+        <a href="">
+            <div class="logo">vaccine</div>
+        </a>
+        <ul>
+            <li>
+                <a href="">홍길동</a>
+            </li>
+            <li>
+                <a href="">logout</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <aside>
+            <h3 class="aside-title">조작적 정의</h3>
+            <ul>
+                <li>목록리스트</li>
+                <li>조작적정의 생성</li>
+                <li>추출관리</li>
+            </ul>
+            <h3 class="aside-title">연구디자인</h3>
+            <ul>
+                <li>연구디자인 리스트</li>
+                <li>연구디자인 생성</li>
+                <li>추출관리</li>
+            </ul>
+            <h3 class="aside-title">대시보드</h3>
+            <ul>
+                <li>summary</li>
+                <li>접종률</li>
+                <li>안전성</li>
+            </ul>
+        </aside>
+        <div class="content">
+            <div class="content-title">
+                <h1>백신 접종률</h1>
+                <ul class="tabs">
+                    <li><a class="active" href="">생년월 코호트별 접종률</a></li>
+                    <li><a href="">연령군별 접종률</a></li>
+                    <li><a href="">완전접종률</a></li>
+                    <li><a href="">지역별 접종률</a></li>
+                </ul>
+            </div>
+            <section class="search-period">
+                <label>기간</label>
+                <input type="date">
+                <span>~</span>
+                <input type="date">
+            </section>
+            <section class="result-view">
+                <aside>
+                    <h3>백신</h3>
+                    <ul class="select-vaccine-type">
+                        <li>BCG</li>
+                        <li>B형간염</li>
+                        <li>DTaP</li>
+                        <li>폴리오(IPV)</li>
+                        <li>DTaP-IPV</li>
+                        <li>DTaP-IPV/Hib</li>
+                        <li>Td</li>
+                        <li>Tdap</li>
+                        <li>MMR</li>
+                        <li>일본뇌염</li>
+                        <li>수두</li>
+                        <li>Hib</li>
+                        <li>A형간염</li>
+                        <li>폐렴구균</li>
+                        <li>HPV</li>
+                        <li>장티푸스</li>
+                        <li>신증후군출혈열</li>
+                    </ul>
+                    <ul class="select-inculation-order">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </aside>
+                <div class="content">
+                    <h2>생년월 코호트별 접종률 (어린이 대상 백신)</h2>
 
+                    <div class="chart-container">
+                        <div class="chart"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
 </body>
 </html>
