@@ -34,7 +34,8 @@
     --darkmodeSecondaryColor: #373a46;
     --darkmodeTertiaryColor: #85899a;
     --brightPurple: #8f93e0;
-    --brightGray: #d8dae0
+    --brightGray: #d9dee2;
+    --mediumGray: #b8bfcc
 }
 
 svg {
@@ -181,8 +182,8 @@ input {
     -webkit-appearance: none;
     height: auto;
     border: 0;
-    padding: .7rem;
-    font: 15px/1.5 'NanumSquare';
+    padding: .5rem;
+    font: 15px/1 'NanumSquare';
     background-color: white;
     outline: 0;
     box-sizing: border-box;
@@ -322,7 +323,8 @@ aside li {
 }
 
 .content-title h1 {
-    font: normal 1.7rem/1 'Nanumsquare';
+    font: normal 1.5rem/1 'Nanumsquare';
+    flex: 1 1 auto;
 }
 
 .content .title p {
