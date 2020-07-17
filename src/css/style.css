@@ -1,3 +1,32 @@
+aside {
+    flex-direction: column;
+}
+
+aside h3 span, aside ul {
+    display: none;
+}
+
+aside.active h3 span, aside.active ul {
+    display: flex;
+}
+
+aside h3 {
+    display: flex;
+    align-items: center;
+}
+
+.ico-aside-menu {
+    padding: 1rem;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+main {
+    flex-direction: column;
+}
+
 header {
     background-color: slategray;
 }
@@ -6,17 +35,24 @@ section {
     width: 100%;
 }
 
+.content {
+}
+
 .content-title {
-    border-bottom: 1px solid #eee;
+    padding: 1rem;
 }
 
 .tabs {
+    margin-bottom: 1rem;
+}
 
+.tabs li {
+    margin-right:2rem;
 }
 
 .tabs a {
     display: flex;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     position: relative;
 }
 
@@ -33,19 +69,85 @@ section {
     background-color: var(--primaryColor);
 }
 
-.content aside {
-    flex: 0 0 200px;
-    background-color: white;
+.content-view {
+    flex: 1 1 auto;
+    max-width: none;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
-.content aside .select-vaccine-type {
-    max-height: 30vh;
-    overflow-y: auto;
-    overflow-y: auto;
+.search {
+    background-color: white;
+    border-radius: .3rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.search section {
+    display: flex;
+    align-items: center;
+}
+
+.search section:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
+
+.search section h3 {
+    flex: 0 0 100px;
+}
+
+.search .flex-wrapper {
+    padding: 0rem;
+    justify-content: space-between;
+}
+
+.search ul {
+    flex-wrap: wrap;
+}
+
+.search li {
+    margin: .5rem .25rem
+}
+
+.search .select-inculation-order,
+.search .search-period {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 50%;
+    align-items: center;
+}
+
+.search .search-period {
+    justify-content: flex-end;
+}
+
+.search .select label {
+    padding: 0.3rem 1.2rem;
+    border: 1px solid #d9dee2;
+    border-radius: .5rem;
+    line-height: 1;
+}
+
+.search .select input[type="radio"] + label {
+    margin-right: 0;
+    box-sizing: border-box;
+}
+
+.search .select input[type="radio"] + label:before {
+    content: none;
+}
+
+.search .select input[type="radio"]:hover + label, input[type="radio"]:checked + label {
+    background-color: #2869bd !important;
+    border: 0
 }
 
 .result-view {
+    margin-top:1rem;
     flex: 1 1 auto;
     display: flex;
-
+    background-color: white;
+    border-radius: .3rem;
+    padding: 1rem;
+    width: 100%;
 }
