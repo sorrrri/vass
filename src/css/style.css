@@ -75,18 +75,25 @@ section {
 }
 
 
-.content-view > section:last-of-type {
+.search {
     flex: 1 1 auto;
     margin-left: 1rem;
     display: flex;
     flex-direction: column;
 }
 
+.search .submit-search {
+    background-color: #e4edff;
+}
+.search .submit-search svg{
+    fill: cornflowerblue;
+}
+
 .filter {
     flex: 0 0 auto;
     background-color: white;
     border-radius: .3rem;
-    padding: 1rem;
+    padding: .5rem;
     width: 100%;
 }
 
@@ -216,8 +223,20 @@ section {
     margin-top: 1rem;
     flex: 1 1 auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     border-radius: .3rem;
     padding: 1rem;
     width: 100%;
+}
+
+.chart-container {
+    flex:1;
+    height: 100%;
+}
+
+.chart {
+    flex:1;
+    height: 100%;
 }
