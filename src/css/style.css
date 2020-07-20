@@ -1,3 +1,14 @@
+.datepicker table tr td span {
+    justify-content: center;
+    line-height: 36px;
+    height: 36px;
+}
+
+.logo {
+    font-family: Montserrat;
+    font-size: 18px;
+}
+
 input {
     color: slategray;
 }
@@ -41,8 +52,8 @@ aside.active .ico-aside-menu svg:last-of-type {
     display: flex;
     border: 1px solid var(--lightGray);
     border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     padding: 5px;
 }
 
@@ -252,8 +263,8 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 1.5rem;
     border: 1px solid var(--brightGray)
 }

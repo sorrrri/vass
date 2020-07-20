@@ -127,6 +127,7 @@ a:focus {
 
 
 .container {
+    padding: 0; /* bootstrap */
     width: 100%;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
@@ -201,11 +202,14 @@ input:focus, select:focus, button:focus {
 }
 
 label {
+    font-weight: normal; /* bootstrap*/
+    margin-bottom: 0; /* bootstrap*/
     flex: 0 0 20% !important;
     color: slategray;
 }
 
 button {
+    display: flex;
     border: 0;
     background: var(--primaryColor);
     color: white;
@@ -320,7 +324,7 @@ aside li {
 }
 
 .content-title h1 {
-    font: normal 1.5rem/1 'Nanumsquare';
+    font: normal 2rem/1 'Nanumsquare';
     flex: 1 1 auto;
 }
 
