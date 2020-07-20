@@ -32,9 +32,22 @@ aside li a.active {
 aside .ico-aside-menu {
     padding: 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     cursor: pointer;
+}
+
+aside.active .ico-aside-menu svg:last-of-type {
+    display: flex;
+    border: 1px solid var(--lightGray);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    padding: 5px;
+}
+
+aside .ico-aside-menu svg:last-of-type {
+    display: none;
 }
 
 aside h3 span, aside ul {
@@ -51,9 +64,10 @@ aside h3 svg {
 }
 
 aside.active {
-    flex: 1 1 160px;
+    flex: 0 1 160px;
 }
 
+aside.active .ico-aside-menu svg:first-of-type,
 aside.active h3 svg {
     display: none;
 }
