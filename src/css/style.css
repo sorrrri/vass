@@ -51,8 +51,7 @@ aside h3 svg {
 }
 
 aside.active {
-    flex: 1 1 0;
-    width: 160px;
+    flex: 1 1 160px;
 }
 
 aside.active h3 svg {
@@ -283,6 +282,7 @@ section {
 }
 
 .chart {
-    width: 70%;
-    height: 70%;
+    width: 80%;
+    max-width: 1000px;
+    height: 90%;
 }
