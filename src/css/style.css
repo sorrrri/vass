@@ -1,17 +1,44 @@
+input {
+    color: slategray;
+}
+
 aside {
     flex-direction: column;
+    transition: .2s;
+}
+
+aside h3 {
+    padding: 2rem 1.2rem .5rem;
+}
+
+aside li {
+}
+
+aside li a {
+    display: flex;
+    color: slategray;
+    font-size: 13px;
+    padding: .6rem;
+    margin: .2rem .5rem;
+    border-radius: .3rem;
+    transition: .2s;
+}
+
+aside li a:hover,
+aside li a.active {
+    background-color: var(--lightGray);
 }
 
 aside .ico-aside-menu {
     padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 aside h3 span, aside ul {
     display: none;
-}
-
-aside.active h3 span, aside.active ul {
-    display: flex;
 }
 
 aside h3 {
@@ -21,6 +48,20 @@ aside h3 {
 
 aside h3 svg {
     fill: var(--mediumGray);
+}
+
+aside.active {
+    flex: 1 1 0;
+    width: 160px;
+}
+
+aside.active h3 svg {
+    display: none;
+}
+
+aside.active h3 span, aside.active ul {
+    display: flex;
+    font-size: 15px;
 }
 
 input[type="radio"] {
@@ -61,6 +102,7 @@ section {
 }
 
 .tabs a {
+    color: var(--mediumGray);
     display: flex;
     padding: .7rem 1rem;
     border-radius: .3rem;
@@ -83,6 +125,7 @@ section {
 }
 
 .search .submit-search {
+    padding: .3rem 1rem;
     background-color: #e4edff;
 }
 .search .submit-search svg{
@@ -146,7 +189,6 @@ section {
     background-color: #e2f1ec;
     border: 0;
     color: #2f6555;
-    font-weight: bold;
 }
 
 .filter-vaccine-type {
@@ -212,6 +254,7 @@ section {
 
 .filter-period {
     justify-content: flex-end;
+    flex: 1 1 70%
 }
 
 .filter-period input {
@@ -232,11 +275,14 @@ section {
 }
 
 .chart-container {
-    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1 1 auto;
     height: 100%;
 }
 
 .chart {
-    flex:1;
-    height: 100%;
+    width: 70%;
+    height: 70%;
 }

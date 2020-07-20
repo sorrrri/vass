@@ -34,6 +34,7 @@
     --darkmodeSecondaryColor: #373a46;
     --darkmodeTertiaryColor: #85899a;
     --brightPurple: #8f93e0;
+    --lightGray: #e3e7ef;
     --brightGray: #d9dee2;
     --mediumGray: #b8bfcc
 }
@@ -280,15 +281,11 @@ aside {
     background-color: white;
 }
 
-aside h3 {
-    padding: 2rem 1rem 1rem;
-}
 aside ul {
     flex-direction: column;
 }
 
 aside li {
-    padding: .3rem 1rem;
 }
 
 .flex-wrapper {
