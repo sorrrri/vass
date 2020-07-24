@@ -114,6 +114,7 @@ a:hover,
 a:focus {
     color: var(--color-link-hover);
     outline: none;
+    text-decoration: none;
 }
 
 .js-image {
@@ -272,6 +273,9 @@ header .menu {
     cursor: pointer;
 }
 
+header .menu a {
+    font-size: 13px;
+}
 header .logo {
 }
 

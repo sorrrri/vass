@@ -1,4 +1,4 @@
-google.charts.load('current', {'packages': ['corechart', 'line']});
+google.charts.load('current', {'packages': ['geochart', 'corechart', 'line']});
 google.charts.setOnLoadCallback(drawChart);
 google.charts.setOnLoadCallback(drawChart_03);
 google.charts.setOnLoadCallback(drawChart_04);
@@ -104,6 +104,11 @@ function drawChart_03() {
         [5, 684, 321, 678, 143, 354, 894, 135],
         [6, 357, 684, 327, 874, 234, 651, 387],
         [7, 843, 357, 165, 753, 486, 571, 694],
+        [8, 234, 354, 658, 324, 684, 543, 847],
+        [9, 645, 654, 124, 842, 697, 324, 565],
+        [10, 456, 324, 561, 367, 165, 567, 658],
+        [11, 684, 321, 678, 143, 354, 894, 135],
+        [12, 357, 684, 327, 874, 234, 651, 387],
     ]);
 
     var options = {
@@ -119,6 +124,7 @@ function drawChart_03() {
         },
         hAxis: {
             title: '조회기간',
+            width: '100%'
         },
         animation: {
             startup: true,
@@ -137,62 +143,59 @@ function drawChart_04() {
     var data = new google.visualization.DataTable();
 
     data.addColumn('string', 'Country');
-    data.addColumn('number', 'Value');
-    data.addColumn({type:'string', role:'tooltip'});var ivalue = new Array();
+    data.addColumn('number', 'Percentage');
+    data.addColumn({type:'string', role:'tooltip'});
 
-    data.addRows([[{v:'KR-11', f:'Seoul Teugbyeolsi'},0,'Click to change background color']]);
-    ivalue['KR-11'] = '#3182BD';
+    data.addRows([[{v:'KR-11', f:'서울'},89,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-26', f:'Busan Gwang\'yeogsi'},1,'Click to change background color']]);
-    ivalue['KR-26'] = '#3182BD';
+    data.addRows([[{v:'KR-26', f:'Busan Gwang\'yeogsi'},90,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-27',f:'Daegu Gwang\'yeogsi'},2,'Click to change background color']]);
-    ivalue['KR-27'] = '#3182BD';
+    data.addRows([[{v:'KR-27',f:'Daegu Gwang\'yeogsi'},95,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-30',f:'Daejeon Gwang\'yeogsi'},3,'Click to change background color']]);
-    ivalue['KR-30'] = '#3182BD';
+    data.addRows([[{v:'KR-30',f:'Daejeon Gwang\'yeogsi'},92,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-29',f:'Gwangju Gwang\'yeogs'},4,'Click to change background color']]);
-    ivalue['KR-29'] = '#3182BD';
+    data.addRows([[{v:'KR-29',f:'Gwangju Gwang\'yeogs'},97,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-28',f:'Incheon Gwang\'yeogsi'},5,'Click to change background color']]);
-    ivalue['KR-28'] = '#3182BD';
+    data.addRows([[{v:'KR-28',f:'Incheon Gwang\'yeogsi'},80,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-31',f:'Ulsan Gwang\'yeogsi'},6,'Click to change background color']]);
-    ivalue['KR-31'] = '#3182BD';
+    data.addRows([[{v:'KR-31',f:'Ulsan Gwang\'yeogsi'},86,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-43',f:'Chungcheongbugdo'},7,'Click to change background color']]);
-    ivalue['KR-43'] = '#3182BD';
+    data.addRows([[{v:'KR-43',f:'충청북도'},90,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-44',f:'Chungcheongnamdo'},8,'Click to change background color']]);
-    ivalue['KR-44'] = '#3182BD';
+    data.addRows([[{v:'KR-44',f:'충청남도'},88,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-42',f:'Gang\'weondo'},9,'Click to change background color']]);
-    ivalue['KR-42'] = '#9ECAE1';
+    data.addRows([[{v:'KR-42',f:'Gang\'weondo'},89,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-41',f:'Gyeonggido'},10,'Click to change background color']]);
-    ivalue['KR-41'] = '#9ECAE1';
+    data.addRows([[{v:'KR-41',f:'경기도'},90,'고양시, 과천시, 광명시, 광주시, 구리시,\n' +
+    '\n' +
+    '군포시, 김포시, 남양주시, 동두천시, 부천시,\n' +
+    '\n' +
+    '성남시, 수원시, 시흥시, 안산시, 안성시,\n' +
+    '\n' +
+    '안양시, 양주시, 오산시, 용인시, 의왕시,\n' +
+    '\n' +
+    '의정부시, 이천시, 파주시, 평택시, 포천시,\n' +
+    '\n' +
+    '하남시, 화성시']]);
 
-    data.addRows([[{v:'KR-47',f:'Gyeongsangbugdo'},11,'Click to change background color']]);
-    ivalue['KR-47'] = '#9ECAE1';
+    data.addRows([[{v:'KR-47',f:'경상북도'},91,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-48',f:'Gyeongsangnamdo'},12,'Click to change background color']]);
-    ivalue['KR-48'] = '#9ECAE1';
+    data.addRows([[{v:'KR-48',f:'경상남도'},99,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-49',f:'Jejudo'},13,'Click to change background color']]);
-    ivalue['KR-49'] = '#9ECAE1';
+    data.addRows([[{v:'KR-49',f:'제주도'},93,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-45',f:'Jeonrabugdo'},14,'Click to change background color']]);
-    ivalue['KR-45'] = '#9ECAE1';
+    data.addRows([[{v:'KR-45',f:'전라북도'},89,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-46',f:'Jeonranamdo'},15,'Click to change background color']]);
-    ivalue['KR-46'] = '#9ECAE1';
+    data.addRows([[{v:'KR-46',f:'전라남도'},80,'Click to change background color']]);
 
     var options = {
+        title: '월별 백신 접종 받은 사람 수',
+        subtitle: '어린이 대상 백신',
+        width: "100%",
+        height: "100%",
         backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
-        colorAxis:  {minValue: 0, maxValue: 21,  colors: ['#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#DEEBF7','#DEEBF7','#DEEBF7','#DEEBF7','#DEEBF7',]},
+        colorAxis:  {minValue: 70, maxValue: 100,  colors: ['#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#DEEBF7','#DEEBF7','#DEEBF7','#DEEBF7','#DEEBF7',]},
         legend: 'none',
-        backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
         datalessRegionColor: '#f5f5f5',
         displayMode: 'regions',
         enableRegionInteractivity: 'true',
@@ -200,8 +203,6 @@ function drawChart_04() {
         sizeAxis: {minValue: 1, maxValue:1,minSize:10,  maxSize: 10},
         region:'KR', //country code
         keepAspectRatio: true,
-        width:600,
-        height:400,
         tooltip: {textStyle: {color: '#444444'}, trigger:'focus'}
     };
 
