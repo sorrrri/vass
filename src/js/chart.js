@@ -1,5 +1,6 @@
 google.charts.load('current', {'packages': ['geochart', 'corechart', 'line']});
 google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(drawChart_02);
 google.charts.setOnLoadCallback(drawChart_03);
 google.charts.setOnLoadCallback(drawChart_04);
 
@@ -80,6 +81,69 @@ function drawChart() {
     chart.draw(data, options);
 }
 
+function drawChart_02() {
+
+    var data = new google.visualization.DataTable();
+    data.addColumn('date', 'Date');
+    data.addColumn('number', '0~2개월');
+    data.addColumn('number', '2~4개월');
+    data.addColumn('number', '4~6개월');
+    data.addColumn('number', '6~8개월');
+
+    data.addRows([
+        [new Date(2018, 7), 250,  310, 350, 389],
+        [new Date(2018, 8), 235,  304, 355, 388],
+        [new Date(2018, 9), 245,  301, 354, 381],
+        [new Date(2018, 10), 251,  316, 350, 388],
+        [new Date(2018, 11), 246,  317, 353, 384],
+        [new Date(2019, 0), 234,  312, 359, 380],
+        [new Date(2019, 1), 261,  319, 360, 386],
+        [new Date(2019, 2), 254,  320, 354, 389],
+        [new Date(2019, 3), 269,  311, 352, 387],
+        [new Date(2019, 4), 253,  314, 358, 388],
+        [new Date(2019, 5), 258,  313, 357, 384],
+    ]);
+
+    var options = {
+        title: '연령군별 접종률',
+        subtitle: '어린이 대상 백신',
+        width: "100%",
+        height: "100%",
+        /*curveType: 'function',*/
+        vAxis: {
+            title: '접종률',
+            minValue: 0,
+            maxValue: 100
+        },
+        hAxis: {
+            title: '조회기간',
+            format: 'yyyy.MM',
+            gridlines: {
+                count: -1,
+                units: {
+                    days: {format: ['MMM dd']},
+                    hours: {format: ['HH:mm', 'ha']},
+                }
+            },
+            minorGridlines: {
+                units: {
+                    hours: {format: ['hh:mm:ss a', 'ha']},
+                    minutes: {format: ['HH:mm a Z', ':mm']}
+                }
+            }
+        },
+        animation: {
+            startup: true,
+            duration: 1000,
+            easing: 'out',
+        },
+    };
+
+    var chart_02 = new google.visualization.LineChart(document.getElementById('chart_02'));
+
+    chart_02.draw(data, options);
+}
+
 
 
 
@@ -148,61 +212,78 @@ function drawChart_04() {
 
     data.addRows([[{v:'KR-11', f:'서울'},89,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-26', f:'Busan Gwang\'yeogsi'},90,'Click to change background color']]);
+    data.addRows([[{v:'KR-26', f:'부산광역시'},90,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-27',f:'Daegu Gwang\'yeogsi'},95,'Click to change background color']]);
+    data.addRows([[{v:'KR-27',f:'대구광역시'},95,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-30',f:'Daejeon Gwang\'yeogsi'},92,'Click to change background color']]);
+    data.addRows([[{v:'KR-30',f:'대전광역시'},92,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-29',f:'Gwangju Gwang\'yeogs'},97,'Click to change background color']]);
+    data.addRows([[{v:'KR-29',f:'광주광역시'},97,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-28',f:'Incheon Gwang\'yeogsi'},80,'Click to change background color']]);
+    data.addRows([[{v:'KR-28',f:'인천광역시'},80,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-31',f:'Ulsan Gwang\'yeogsi'},86,'Click to change background color']]);
+    data.addRows([[{v:'KR-31',f:'울산광역시'},86,'Click to change background color']]);
 
     data.addRows([[{v:'KR-43',f:'충청북도'},90,'Click to change background color']]);
 
     data.addRows([[{v:'KR-44',f:'충청남도'},88,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-42',f:'Gang\'weondo'},89,'Click to change background color']]);
+    data.addRows([[{v:'KR-42',f:'강원도'},89,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-41',f:'경기도'},90,'고양시, 과천시, 광명시, 광주시, 구리시,\n' +
-    '\n' +
-    '군포시, 김포시, 남양주시, 동두천시, 부천시,\n' +
-    '\n' +
-    '성남시, 수원시, 시흥시, 안산시, 안성시,\n' +
-    '\n' +
-    '안양시, 양주시, 오산시, 용인시, 의왕시,\n' +
-    '\n' +
-    '의정부시, 이천시, 파주시, 평택시, 포천시,\n' +
-    '\n' +
-    '하남시, 화성시']]);
+    data.addRows([[
+        {v:'KR-41',f:'경기도'},
+        90,
+        `고양시: 50
+        과천시: 30
+        광명시: 36
+        광주시: 60
+        구리시: 43
+        군포시
+        김포시
+        남양주시
+        동두천시
+        부천시
+        성남시
+        수원시
+        시흥시
+        안산시
+        안성시
+        안양시
+        양주시
+        오산시
+        용인시
+        의왕시
+        의정부시
+        이천시
+        파주시
+        평택시
+        포천시
+        하남시
+        화성시`]]);
 
     data.addRows([[{v:'KR-47',f:'경상북도'},91,'Click to change background color']]);
 
     data.addRows([[{v:'KR-48',f:'경상남도'},99,'Click to change background color']]);
 
-    data.addRows([[{v:'KR-49',f:'제주도'},93,'Click to change background color']]);
-
     data.addRows([[{v:'KR-45',f:'전라북도'},89,'Click to change background color']]);
 
     data.addRows([[{v:'KR-46',f:'전라남도'},80,'Click to change background color']]);
 
+    data.addRows([[{v:'KR-49',f:'제주도'},93,'Click to change background color']]);
+
+    data.addRows([[{v:'KR-50',f:'세종특별시'},93,'Click to change background color']]);
+
+
     var options = {
         title: '월별 백신 접종 받은 사람 수',
         subtitle: '어린이 대상 백신',
-        width: "100%",
-        height: "100%",
         backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
-        colorAxis:  {minValue: 70, maxValue: 100,  colors: ['#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#DEEBF7','#DEEBF7','#DEEBF7','#DEEBF7','#DEEBF7',]},
-        legend: 'none',
+        colorAxis: {colors: ['cornflowerblue', '#0a44ad']},
         datalessRegionColor: '#f5f5f5',
         displayMode: 'regions',
         enableRegionInteractivity: 'true',
         resolution: 'provinces',
-        sizeAxis: {minValue: 1, maxValue:1,minSize:10,  maxSize: 10},
         region:'KR', //country code
-        keepAspectRatio: true,
         tooltip: {textStyle: {color: '#444444'}, trigger:'focus'}
     };
 
