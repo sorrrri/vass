@@ -24,8 +24,21 @@ window.addEventListener('resize', function(event){
 const aside = document.querySelector('aside')
 const asideMenu = document.querySelector('.ico-aside-menu')
 
+function setMyCookie() {
+    myCookieVal = $('aside').hasClass('active') ? 'isActive' : 'notActive';
+    $.cookie('myCookieName', myCookieVal, {path: '/'});
+}
+
+if ($.cookie('myCookieName') == 'isActive') {
+    $('aside').addClass('active');
+} else {
+    $('aside').removeClass('active');
+}
+
 if(aside) {
     asideMenu.addEventListener('click', () => {
         aside.classList.toggle('active')
+        location.reload()
+        setMyCookie();
     })
 }
