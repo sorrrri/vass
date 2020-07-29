@@ -27,16 +27,17 @@
 }
 
 :root {
-    --primaryColor: #5c61b2;
-    --secondaryColor: #dfe1f0;
+    --primaryColor: #4164e2;
+    --secondaryColor: #3b9cff;
     --darkPurple: #4a5bee;
     --darkmodePrimaryColor: #27292d;
     --darkmodeSecondaryColor: #373a46;
-    --darkmodeTertiaryColor: #85899a;
+    --brightBlue: #e7f3ff;
     --brightPurple: #8f93e0;
     --lightGray: #e3e7ef;
     --brightGray: #d9dee2;
-    --mediumGray: #b8bfcc
+    --mediumGray: #b8bfcc;
+    --darkGray: #85899a;
 }
 
 svg {
@@ -46,6 +47,7 @@ svg {
 body {
     --color-text: #38373e;
     --color-background: #f1f5f9;
+    --color-aside-background: #c3cfdc;
     --color-link: #4b4b4b;
     --color-link-hover: #4b4b4b;
     --color-intro-bg: #0e0e0e;
@@ -214,7 +216,7 @@ button {
     border: 0;
     background: var(--primaryColor);
     color: white;
-    border-radius: .2rem;
+    border-radius: .3rem;
     padding: .5rem 1rem;
     cursor: pointer;
 }
@@ -286,7 +288,7 @@ main {
 }
 
 aside {
-    background-color: white;
+    background-color: var(--primaryColor);
 }
 
 aside ul {

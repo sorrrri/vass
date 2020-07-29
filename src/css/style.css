@@ -14,34 +14,33 @@ input {
 }
 
 aside {
+    font-family: Nanumsquare;
+    background: #e7ebf3;
     flex-direction: column;
     transition: .2s;
 }
 
 aside h3 {
-    padding: 2rem 1.2rem .5rem;
+    padding: 3rem 1.5rem .5rem;
 }
 
 aside li {
 }
 
 aside li a {
+    color: var(--darkGray);
     display: flex;
-    color: slategray;
-    font-size: 13px;
-    padding: 1rem;
-    margin: .2rem .5rem;
-    border-radius: .3rem;
+    padding: 1rem 1.5rem;
     transition: .2s;
 }
 
 aside li a:hover,
 aside li a.active {
-    background-color: var(--lightGray);
+    background-color: white;
 }
 
 aside .ico-aside-menu {
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -50,7 +49,7 @@ aside .ico-aside-menu {
 
 aside.active .ico-aside-menu svg:last-of-type {
     display: flex;
-    border: 1px solid var(--lightGray);
+    border: 1px solid var(--mediumGray);
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
@@ -70,8 +69,8 @@ aside h3 {
     align-items: center;
 }
 
-aside h3 svg {
-    fill: var(--mediumGray);
+aside svg {
+    fill: var(--darkGray);
 }
 
 aside.active {
@@ -128,7 +127,7 @@ section {
 .tabs a {
     color: var(--mediumGray);
     display: flex;
-    padding: .7rem 1rem;
+    padding: 1rem 2rem;
     border-radius: .3rem;
     position: relative;
     transition: background-color .2s;
@@ -137,7 +136,7 @@ section {
 .tabs a:hover,
 .tabs a.active {
     color: white;
-    background: cornflowerblue;
+    background: var(--primaryColor);
 }
 
 
@@ -152,13 +151,15 @@ section {
 }
 
 .search .submit-search {
+    background-color: var(--secondaryColor);
     justify-content: center;
-    padding: 1rem;
-    background-color: #e4edff;
+    padding: 1.2rem;
 }
 
 .search .submit-search svg {
-    fill: cornflowerblue;
+    fill: white;
+    width: 3rem;
+    height: 3rem;
 }
 
 .search section {
@@ -213,9 +214,9 @@ section {
 }
 
 .filter input[type="radio"]:hover + label, input[type="radio"]:checked + label {
-    background-color: #e2f1ec;
-    border: 1px solid #e2f1ec;
-    color: #2f6555;
+    background-color: var(--brightBlue);
+    border: 1px solid var(--brightBlue);
+    color: var(--primaryColor);
 }
 
 .filter-vaccine-type {
@@ -272,8 +273,8 @@ section {
 
 .filter-inculation-order input[type="radio"]:hover + label,
 .filter-inculation-order input[type="radio"]:checked + label {
-    background-color: #e2e8f1;
-    color: #3e76ca;
+    background-color: var(--brightBlue);
+    color: var(--primaryColor);
 }
 
 
@@ -308,7 +309,7 @@ section {
     align-items: center;
     background-color: white;
     border-radius: .5rem;
-    padding: 1rem;
+    padding: 3rem 1rem;
 }
 
 .charts {
@@ -323,14 +324,18 @@ section {
     width: 100%;
     height: 100%;
 }
-.wrapper-chart  {
+
+.wrapper-chart {
     display: flex;
     flex-direction: column;
-    width:30%
+    width: 30%
 }
 
 .chart {
     width: 100%;
     height: 100%;
-    max-width: 1000px;
+}
+
+.datepicker table tr td span.active:active, .datepicker table tr td span.active:hover:active, .datepicker table tr td span.active.disabled:active, .datepicker table tr td span.active.disabled:hover:active, .datepicker table tr td span.active.active, .datepicker table tr td span.active:hover.active, .datepicker table tr td span.active.disabled.active, .datepicker table tr td span.active.disabled:hover.active {
+    background: var(--secondaryColor);
 }
