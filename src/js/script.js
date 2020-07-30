@@ -22,7 +22,7 @@ window.addEventListener('resize', function(event){
 
 
 const aside = document.querySelector('aside')
-const asideMenu = document.querySelector('.ico-aside-menu')
+const asideMenu = document.querySelector('.aside-toggle-menu')
 
 function setMyCookie() {
     myCookieVal = $('aside').hasClass('active') ? 'isActive' : 'notActive';
