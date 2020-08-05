@@ -18,6 +18,15 @@
     src: url('../fonts/Montserrat-ExtraBold2.ttf');
 }
 
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 300;
+    src: url(../fonts/NanumSquareR.eot);
+    src: url(../fonts/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumSquareR.woff) format('woff'),
+    url(../fonts/NanumSquareR.ttf) format('truetype');
+}
+
 *,
 *::after,
 *::before {
@@ -34,8 +43,8 @@
     --darkmodeSecondaryColor: #373a46;
     --brightBlue: #e7f3ff;
     --brightPurple: #8f93e0;
-    --lightGray: #e3e7ef;
-    --brightGray: #d9dee2;
+    --lightGray: #eff2f7;
+    --brightGray: #dbe1ea;
     --mediumGray: #b8bfcc;
     --darkGray: #85899a;
 }

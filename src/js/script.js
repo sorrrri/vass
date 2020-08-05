@@ -14,31 +14,49 @@ document.documentElement.addEventListener('touchstart', function (event) {
 }, false);
 
 
-
-window.addEventListener('resize', function(event){
+window.addEventListener('resize', function (event) {
     location.reload()
 });
 
 
-
 const aside = document.querySelector('aside')
-const asideMenu = document.querySelector('.aside-toggle-menu')
 
 function setMyCookie() {
-    myCookieVal = $('aside').hasClass('active') ? 'isActive' : 'notActive';
-    $.cookie('myCookieName', myCookieVal, {path: '/'});
+    asideToggleCookie = $('aside').hasClass('active') ? 'isActive' : 'notActive';
+    asideSubmenuCookie = $('.sub-menu').hasClass('active') ? 'isActive' : 'notActive';
+    $.cookie('asideToggleCookie', asideToggleCookie, {path: '/'});
+    $.cookie('asideSubmenuCookie', asideSubmenuCookie, {path: '/'});
 }
 
-if ($.cookie('myCookieName') == 'isActive') {
+if ($.cookie('asideToggleCookie') == 'isActive') {
     $('aside').addClass('active');
 } else {
     $('aside').removeClass('active');
 }
 
-if(aside) {
+if ($.cookie('asideSubmenuCookie') == 'isActive') {
+    $('.sub-menu').addClass('active');
+} else {
+    $('.sub-menu').removeClass('active');
+}
+
+
+const asideMenu = document.querySelector('.aside-toggle-menu')
+const asideSubMenu = document.getElementsByClassName('sub-menu')
+
+if (aside) {
     asideMenu.addEventListener('click', () => {
         aside.classList.toggle('active')
         location.reload()
-        setMyCookie();
     })
+
+    function openSubMenu(e) {
+        const subMenu = e.target;
+        console.log(subMenu)
+        subMenu.classList.toggle('active')
+    }
+
+    Array.from(asideSubMenu).forEach(asideSubMenu => asideSubMenu.addEventListener('click', openSubMenu))
+
+    setMyCookie();
 }

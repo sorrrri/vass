@@ -1,4 +1,4 @@
-google.charts.load('current', {'packages': ['geochart', 'corechart', 'line']});
+google.charts.load('current', {'packages': ['geochart', 'table', 'corechart', 'line']});
 google.charts.setOnLoadCallback(drawChart);
 google.charts.setOnLoadCallback(drawChart_02);
 google.charts.setOnLoadCallback(drawChart_03);
@@ -93,17 +93,17 @@ function drawChart_02() {
     data.addColumn('number', '6~8개월');
 
     data.addRows([
-        [new Date(2018, 7), 250,  310, 350, 389],
-        [new Date(2018, 8), 235,  304, 355, 388],
-        [new Date(2018, 9), 245,  301, 354, 381],
-        [new Date(2018, 10), 251,  316, 350, 388],
-        [new Date(2018, 11), 246,  317, 353, 384],
-        [new Date(2019, 0), 234,  312, 359, 380],
-        [new Date(2019, 1), 261,  319, 360, 386],
-        [new Date(2019, 2), 254,  320, 354, 389],
-        [new Date(2019, 3), 269,  311, 352, 387],
-        [new Date(2019, 4), 253,  314, 358, 388],
-        [new Date(2019, 5), 258,  313, 357, 384],
+        [new Date(2018, 7), 250, 310, 350, 389],
+        [new Date(2018, 8), 235, 304, 355, 388],
+        [new Date(2018, 9), 245, 301, 354, 381],
+        [new Date(2018, 10), 251, 316, 350, 388],
+        [new Date(2018, 11), 246, 317, 353, 384],
+        [new Date(2019, 0), 234, 312, 359, 380],
+        [new Date(2019, 1), 261, 319, 360, 386],
+        [new Date(2019, 2), 254, 320, 354, 389],
+        [new Date(2019, 3), 269, 311, 352, 387],
+        [new Date(2019, 4), 253, 314, 358, 388],
+        [new Date(2019, 5), 258, 313, 357, 384],
     ]);
 
     var options = {
@@ -145,8 +145,6 @@ function drawChart_02() {
 
     chart_02.draw(data, options);
 }
-
-
 
 
 // 완전접종룔
@@ -208,125 +206,98 @@ function drawChart_03() {
 function drawChart_04() {
     var data = new google.visualization.DataTable();
 
-    data.addColumn('string', 'Country');
+    data.addColumn('string', '지역');
     data.addColumn('number', 'Percentage');
-    data.addColumn({type:'string', role:'tooltip'});
+    data.addColumn({type: 'string', role: 'tooltip'}, 'Detail');
 
     data.addRows([[
-        {v:'KR-11', f:'서울'},
-        89,
-        `강북구
-        광진구
-        노원구
-        동작구
-        서초구
-        송파구
-        용산구
-        중구
-        강남구
-        강서구
-        구로구
-        도봉구
-        마포구
-        성동구
-        양천구
-        은평구
-        중랑구
-        강동구
-        관악구
-        금천구
-        동대문구
-        서대문구
-        성북구
-        영등포구
-        종로구`]]);
+        {v: 'KR-11', f: '서울'},
+        89, '89']]);
 
-    data.addRows([[{v:'KR-26', f:'부산광역시'},90,'90']]);
+    data.addRows([[{v: 'KR-26', f: '부산광역시'}, 90, '90']]);
 
-    data.addRows([[{v:'KR-27',f:'대구광역시'},95,'95']]);
+    data.addRows([[{v: 'KR-27', f: '대구광역시'}, 95, '95']]);
 
-    data.addRows([[{v:'KR-30',f:'대전광역시'},92,'92']]);
+    data.addRows([[{v: 'KR-30', f: '대전광역시'}, 92, '92']]);
 
-    data.addRows([[{v:'KR-29',f:'광주광역시'},97,'97']]);
+    data.addRows([[{v: 'KR-29', f: '광주광역시'}, 97, '97']]);
 
-    data.addRows([[{v:'KR-28',f:'인천광역시'},80,'80']]);
+    data.addRows([[{v: 'KR-28', f: '인천광역시'}, 80, '80']]);
 
-    data.addRows([[{v:'KR-31',f:'울산광역시'},86,'86']]);
+    data.addRows([[{v: 'KR-31', f: '울산광역시'}, 86, '86']]);
 
-    data.addRows([[{v:'KR-43',f:'충청북도'},90,'90']]);
+    data.addRows([[{v: 'KR-43', f: '충청북도'}, 90, '90']]);
 
-    data.addRows([[{v:'KR-44',f:'충청남도'},88,'88']]);
+    data.addRows([[{v: 'KR-44', f: '충청남도'}, 88, '88']]);
 
-    data.addRows([[{v:'KR-42',f:'강원도'},89,'89']]);
+    data.addRows([[{v: 'KR-42', f: '강원도'}, 89, '89']]);
 
     data.addRows([[
-        {v:'KR-41',f:'경기도'},
+        {v: 'KR-41', f: '경기도'},
         90,
-        `고양시: 50
-        과천시: 30
-        광명시: 36
-        광주시: 60
-        구리시: 43
-        군포시
-        김포시
-        남양주시
-        동두천시
-        부천시
-        성남시
-        수원시
-        시흥시
-        안산시
-        안성시
-        안양시
-        양주시
-        오산시
-        용인시
-        의왕시
-        의정부시
-        이천시
-        파주시
-        평택시
-        포천시
-        하남시
-        화성시`]]);
+        `고양시: 90%, 
+        과천시: 80%, 
+        광명시: 86%, 
+        광주시: 90%, 
+        구리시: 93%,
+        군포시: 95%, 
+        김포시: 97%, 
+        남양주시: 90%, 
+        동두천시: 91%, 
+        부천시: 92%, 
+        성남시: 87%, 
+        수원시: 87%, 
+        시흥시: 88%, 
+        안산시: 83%, 
+        안성시: 90%, 
+        안양시: 89%, 
+        양주시: 88%, 
+        오산시: 86%, 
+        용인시: 88%, 
+        의왕시: 83%, 
+        의정부시: 98%, 
+        이천시: 93%, 
+        파주시: 92%, 
+        평택시: 91%, 
+        포천시: 97%, 
+        하남시: 93%, 
+        화성시: 95%`]]);
 
-    data.addRows([[{v:'KR-47',f:'경상북도'},91,'91']]);
+    data.addRows([[{v: 'KR-47', f: '경상북도'}, 91, '91']]);
 
-    data.addRows([[{v:'KR-48',f:'경상남도'},99,'99']]);
+    data.addRows([[{v: 'KR-48', f: '경상남도'}, 99, '99']]);
 
-    data.addRows([[{v:'KR-45',f:'전라북도'},89,'89']]);
+    data.addRows([[{v: 'KR-45', f: '전라북도'}, 89, '89']]);
 
-    data.addRows([[{v:'KR-46',f:'전라남도'},80,'80']]);
+    data.addRows([[{v: 'KR-46', f: '전라남도'}, 80, '80']]);
 
-    data.addRows([[{v:'KR-49',f:'제주도'},93,'93']]);
+    data.addRows([[{v: 'KR-49', f: '제주도'}, 93, '93']]);
 
-    data.addRows([[{v:'KR-50',f:'세종특별시'},93,'93']]);
+    data.addRows([[{v: 'KR-50', f: '세종특별시'}, 93, '93']]);
 
 
     var options = {
         title: '월별 백신 접종 받은 사람 수',
         subtitle: '어린이 대상 백신',
-        backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
+        backgroundColor: {fill: '#FFFFFF', stroke: '#FFFFFF', strokeWidth: 0},
         colorAxis: {colors: ['#A3E0BD', '#278A7B']},
         datalessRegionColor: '#f5f5f5',
         displayMode: 'regions',
         enableRegionInteractivity: 'true',
         resolution: 'provinces',
-        region:'KR', //country code
-        tooltip: {textStyle: {color: '#444444'}, trigger:'focus'}
+        region: 'KR', //country code
+        tooltip: {textStyle: {color: '#444444'}, trigger: 'focus'}
     };
 
     var chart_04 = new google.visualization.GeoChart(document.getElementById('chart_04'));
-    google.visualization.events.addListener(chart_04, 'select', function() {
-        var selection = chart.getSelection();
-        if (selection.length == 1) {
-            var selectedRow = selection[0].row;
-            var selectedRegion = data.getValue(selectedRow, 0);
-            if(ivalue[selectedRegion] != '') {
-                document.getElementsByTagName('body')[0].style.background=ivalue[selectedRegion];
-            }
-        }
-    });
+
+    var table_04 = new google.visualization.Table(document.getElementById('table_04'));
+    table_04.draw(data, null);
+
+    google.visualization.events.addListener(table_04, 'select', function () {
+        chart_04.setSelection(table_04.getSelection());
+    })
+
     chart_04.draw(data, options);
 }
 
@@ -334,125 +305,97 @@ function drawChart_04() {
 function drawChart_05() {
     var data = new google.visualization.DataTable();
 
-    data.addColumn('string', 'Country');
+    data.addColumn('string', '지역');
     data.addColumn('number', 'Percentage');
-    data.addColumn({type:'string', role:'tooltip'});
+    data.addColumn({type: 'string', role: 'tooltip'});
 
     data.addRows([[
-        {v:'KR-11', f:'서울'},
-        89,
-        `강북구
-        광진구
-        노원구
-        동작구
-        서초구
-        송파구
-        용산구
-        중구
-        강남구
-        강서구
-        구로구
-        도봉구
-        마포구
-        성동구
-        양천구
-        은평구
-        중랑구
-        강동구
-        관악구
-        금천구
-        동대문구
-        서대문구
-        성북구
-        영등포구
-        종로구`]]);
+        {v: 'KR-11', f: '서울'},
+        89,'89%']]);
 
-    data.addRows([[{v:'KR-26', f:'부산광역시'},90,'90']]);
+    data.addRows([[{v: 'KR-26', f: '부산광역시'}, 90, '90%']]);
 
-    data.addRows([[{v:'KR-27',f:'대구광역시'},95,'95']]);
+    data.addRows([[{v: 'KR-27', f: '대구광역시'}, 95, '95%']]);
 
-    data.addRows([[{v:'KR-30',f:'대전광역시'},92,'92']]);
+    data.addRows([[{v: 'KR-30', f: '대전광역시'}, 92, '92%']]);
 
-    data.addRows([[{v:'KR-29',f:'광주광역시'},97,'97']]);
+    data.addRows([[{v: 'KR-29', f: '광주광역시'}, 97, '97%']]);
 
-    data.addRows([[{v:'KR-28',f:'인천광역시'},80,'80']]);
+    data.addRows([[{v: 'KR-28', f: '인천광역시'}, 80, '80%']]);
 
-    data.addRows([[{v:'KR-31',f:'울산광역시'},86,'86']]);
+    data.addRows([[{v: 'KR-31', f: '울산광역시'}, 86, '86%']]);
 
-    data.addRows([[{v:'KR-43',f:'충청북도'},90,'90']]);
+    data.addRows([[{v: 'KR-43', f: '충청북도'}, 90, '90%']]);
 
-    data.addRows([[{v:'KR-44',f:'충청남도'},88,'88']]);
+    data.addRows([[{v: 'KR-44', f: '충청남도'}, 88, '88%']]);
 
-    data.addRows([[{v:'KR-42',f:'강원도'},89,'89']]);
+    data.addRows([[{v: 'KR-42', f: '강원도'}, 89, '89%']]);
 
     data.addRows([[
-        {v:'KR-41',f:'경기도'},
+        {v: 'KR-41', f: '경기도'},
         90,
-        `고양시: 50
-        과천시: 30
-        광명시: 36
-        광주시: 60
-        구리시: 43
-        군포시
-        김포시
-        남양주시
-        동두천시
-        부천시
-        성남시
-        수원시
-        시흥시
-        안산시
-        안성시
-        안양시
-        양주시
-        오산시
-        용인시
-        의왕시
-        의정부시
-        이천시
-        파주시
-        평택시
-        포천시
-        하남시
-        화성시`]]);
+        `고양시: 90%, 
+        과천시: 80%, 
+        광명시: 86%, 
+        광주시: 90%, 
+        구리시: 93%,
+        군포시: 95%, 
+        김포시: 97%, 
+        남양주시: 90%, 
+        동두천시: 91%, 
+        부천시: 92%, 
+        성남시: 87%, 
+        수원시: 87%, 
+        시흥시: 88%, 
+        안산시: 83%, 
+        안성시: 90%, 
+        안양시: 89%, 
+        양주시: 88%, 
+        오산시: 86%, 
+        용인시: 88%, 
+        의왕시: 83%, 
+        의정부시: 98%, 
+        이천시: 93%, 
+        파주시: 92%, 
+        평택시: 91%, 
+        포천시: 97%, 
+        하남시: 93%, 
+        화성시: 95%`]]);
 
-    data.addRows([[{v:'KR-47',f:'경상북도'},91,'91']]);
+    data.addRows([[{v: 'KR-47', f: '경상북도'}, 91, '91%']]);
 
-    data.addRows([[{v:'KR-48',f:'경상남도'},99,'99']]);
+    data.addRows([[{v: 'KR-48', f: '경상남도'}, 99, '99%']]);
 
-    data.addRows([[{v:'KR-45',f:'전라북도'},89,'89']]);
+    data.addRows([[{v: 'KR-45', f: '전라북도'}, 89, '89%']]);
 
-    data.addRows([[{v:'KR-46',f:'전라남도'},80,'80']]);
+    data.addRows([[{v: 'KR-46', f: '전라남도'}, 80, '80%']]);
 
-    data.addRows([[{v:'KR-49',f:'제주도'},93,'93']]);
+    data.addRows([[{v: 'KR-49', f: '제주도'}, 93, '93%']]);
 
-    data.addRows([[{v:'KR-50',f:'세종특별시'},93,'93']]);
+    data.addRows([[{v: 'KR-50', f: '세종특별시'}, 93, '93%']]);
 
 
     var options = {
         title: '월별 백신 접종 받은 사람 수',
         subtitle: '어린이 대상 백신',
-        backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
+        backgroundColor: {fill: '#FFFFFF', stroke: '#FFFFFF', strokeWidth: 0},
         colorAxis: {colors: ['#A3E0BD', '#278A7B']},
         datalessRegionColor: '#f5f5f5',
         displayMode: 'regions',
         enableRegionInteractivity: 'true',
         resolution: 'provinces',
-        region:'KR', //country code
-        tooltip: {textStyle: {color: '#444444'}, trigger:'focus'}
+        region: 'KR', //country code
+        tooltip: {textStyle: {color: '#444444'}, trigger: 'focus'}
     };
 
     var chart_05 = new google.visualization.GeoChart(document.getElementById('chart_05'));
-    google.visualization.events.addListener(chart_04, 'select', function() {
-        var selection = chart.getSelection();
-        if (selection.length == 1) {
-            var selectedRow = selection[0].row;
-            var selectedRegion = data.getValue(selectedRow, 0);
-            if(ivalue[selectedRegion] != '') {
-                document.getElementsByTagName('body')[0].style.background=ivalue[selectedRegion];
-            }
-        }
-    });
+
+    var table_05 = new google.visualization.Table(document.getElementById('table_05'));
+    table_05.draw(data, null);
+
+    google.visualization.events.addListener(table_05, 'select', function () {
+        chart_05.setSelection(table_05.getSelection());
+    })
     chart_05.draw(data, options);
 }
 
@@ -460,124 +403,96 @@ function drawChart_05() {
 function drawChart_06() {
     var data = new google.visualization.DataTable();
 
-    data.addColumn('string', 'Country');
+    data.addColumn('string', '지역');
     data.addColumn('number', 'Percentage');
-    data.addColumn({type:'string', role:'tooltip'});
+    data.addColumn({type: 'string', role: 'tooltip'});
 
     data.addRows([[
-        {v:'KR-11', f:'서울'},
-        89,
-        `강북구
-        광진구
-        노원구
-        동작구
-        서초구
-        송파구
-        용산구
-        중구
-        강남구
-        강서구
-        구로구
-        도봉구
-        마포구
-        성동구
-        양천구
-        은평구
-        중랑구
-        강동구
-        관악구
-        금천구
-        동대문구
-        서대문구
-        성북구
-        영등포구
-        종로구`]]);
+        {v: 'KR-11', f: '서울'},
+        89,'89']]);
 
-    data.addRows([[{v:'KR-26', f:'부산광역시'},90,'90']]);
+    data.addRows([[{v: 'KR-26', f: '부산광역시'}, 90, '90']]);
 
-    data.addRows([[{v:'KR-27',f:'대구광역시'},95,'95']]);
+    data.addRows([[{v: 'KR-27', f: '대구광역시'}, 95, '95']]);
 
-    data.addRows([[{v:'KR-30',f:'대전광역시'},92,'92']]);
+    data.addRows([[{v: 'KR-30', f: '대전광역시'}, 92, '92']]);
 
-    data.addRows([[{v:'KR-29',f:'광주광역시'},97,'97']]);
+    data.addRows([[{v: 'KR-29', f: '광주광역시'}, 97, '97']]);
 
-    data.addRows([[{v:'KR-28',f:'인천광역시'},80,'80']]);
+    data.addRows([[{v: 'KR-28', f: '인천광역시'}, 80, '80']]);
 
-    data.addRows([[{v:'KR-31',f:'울산광역시'},86,'86']]);
+    data.addRows([[{v: 'KR-31', f: '울산광역시'}, 86, '86']]);
 
-    data.addRows([[{v:'KR-43',f:'충청북도'},90,'90']]);
+    data.addRows([[{v: 'KR-43', f: '충청북도'}, 90, '90']]);
 
-    data.addRows([[{v:'KR-44',f:'충청남도'},88,'88']]);
+    data.addRows([[{v: 'KR-44', f: '충청남도'}, 88, '88']]);
 
-    data.addRows([[{v:'KR-42',f:'강원도'},89,'89']]);
+    data.addRows([[{v: 'KR-42', f: '강원도'}, 89, '89']]);
 
     data.addRows([[
-        {v:'KR-41',f:'경기도'},
+        {v: 'KR-41', f: '경기도'},
         90,
-        `고양시: 50
-        과천시: 30
-        광명시: 36
-        광주시: 60
-        구리시: 43
-        군포시
-        김포시
-        남양주시
-        동두천시
-        부천시
-        성남시
-        수원시
-        시흥시
-        안산시
-        안성시
-        안양시
-        양주시
-        오산시
-        용인시
-        의왕시
-        의정부시
-        이천시
-        파주시
-        평택시
-        포천시
-        하남시
-        화성시`]]);
+        `고양시: 90%, 
+        과천시: 80%, 
+        광명시: 86%, 
+        광주시: 90%, 
+        구리시: 93%,
+        군포시: 95%, 
+        김포시: 97%, 
+        남양주시: 90%, 
+        동두천시: 91%, 
+        부천시: 92%, 
+        성남시: 87%, 
+        수원시: 87%, 
+        시흥시: 88%, 
+        안산시: 83%, 
+        안성시: 90%, 
+        안양시: 89%, 
+        양주시: 88%, 
+        오산시: 86%, 
+        용인시: 88%, 
+        의왕시: 83%, 
+        의정부시: 98%, 
+        이천시: 93%, 
+        파주시: 92%, 
+        평택시: 91%, 
+        포천시: 97%, 
+        하남시: 93%, 
+        화성시: 95%`]]);
 
-    data.addRows([[{v:'KR-47',f:'경상북도'},91,'91']]);
+    data.addRows([[{v: 'KR-47', f: '경상북도'}, 91, '91']]);
 
-    data.addRows([[{v:'KR-48',f:'경상남도'},99,'99']]);
+    data.addRows([[{v: 'KR-48', f: '경상남도'}, 99, '99']]);
 
-    data.addRows([[{v:'KR-45',f:'전라북도'},89,'89']]);
+    data.addRows([[{v: 'KR-45', f: '전라북도'}, 89, '89']]);
 
-    data.addRows([[{v:'KR-46',f:'전라남도'},80,'80']]);
+    data.addRows([[{v: 'KR-46', f: '전라남도'}, 80, '80']]);
 
-    data.addRows([[{v:'KR-49',f:'제주도'},93,'93']]);
+    data.addRows([[{v: 'KR-49', f: '제주도'}, 93, '93']]);
 
-    data.addRows([[{v:'KR-50',f:'세종특별시'},93,'93']]);
+    data.addRows([[{v: 'KR-50', f: '세종특별시'}, 93, '93']]);
 
 
     var options = {
         title: '월별 백신 접종 받은 사람 수',
         subtitle: '어린이 대상 백신',
-        backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
+        backgroundColor: {fill: '#FFFFFF', stroke: '#FFFFFF', strokeWidth: 0},
         colorAxis: {colors: ['#A3E0BD', '#278A7B']},
         datalessRegionColor: '#f5f5f5',
         displayMode: 'regions',
         enableRegionInteractivity: 'true',
         resolution: 'provinces',
-        region:'KR', //country code
-        tooltip: {textStyle: {color: '#444444'}, trigger:'focus'}
+        region: 'KR', //country code
+        tooltip: {textStyle: {color: '#444444'}, trigger: 'focus'}
     };
 
     var chart_06 = new google.visualization.GeoChart(document.getElementById('chart_06'));
-    google.visualization.events.addListener(chart_04, 'select', function() {
-        var selection = chart.getSelection();
-        if (selection.length == 1) {
-            var selectedRow = selection[0].row;
-            var selectedRegion = data.getValue(selectedRow, 0);
-            if(ivalue[selectedRegion] != '') {
-                document.getElementsByTagName('body')[0].style.background=ivalue[selectedRegion];
-            }
-        }
-    });
+
+    var table_06 = new google.visualization.Table(document.getElementById('table_06'));
+    table_06.draw(data, null);
+
+    google.visualization.events.addListener(table_06, 'select', function () {
+        chart_06.setSelection(table_06.getSelection());
+    })
     chart_06.draw(data, options);
 }

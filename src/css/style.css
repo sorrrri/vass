@@ -1,3 +1,7 @@
+h4 {
+    font-family: NanumSquare;
+}
+
 .container {
     background: #e7ebf3;
     overflow: hidden;
@@ -28,25 +32,6 @@ aside {
 aside small {
     display: block;
     padding: 3rem 1.5rem .5rem;
-}
-
-aside li {
-}
-
-aside li a {
-    font-size: 14px;
-    color: var(--darkGray);
-    display: flex;
-    padding: 1rem;
-    margin: .25rem .5rem;
-    transition: .2s;
-}
-
-aside li a:hover,
-aside li a.active {
-    border-radius: .5rem;
-    background-color: white;
-    color: var(--color-link-hover)
 }
 
 aside .aside-toggle-menu {
@@ -108,6 +93,19 @@ aside.active .aside-icon-menu {
     display: none;
 }
 
+aside svg {
+    fill: var(--darkGray);
+}
+
+aside.active {
+    flex: 0 0 180px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+aside.active .aside-toggle-menu svg:first-of-type {
+    display: none;
+}
 
 aside .aside-menu {
     display: none;
@@ -124,35 +122,74 @@ aside h3 {
     cursor: pointer;
 }
 
-aside h3.active {
-    background: var(--brightBlue);
-}
 
-aside h3.active svg {
-    fill: var(--primaryColor);
-}
-
-aside.active h3 {
-    justify-content: flex-start;
-    cursor: default;
-}
-
-aside svg {
-    fill: var(--darkGray);
-}
-
-aside.active {
-    flex: 0 0 160px;
-}
-
-aside.active .aside-toggle-menu svg:first-of-type,
-aside.active h3 svg {
+aside ul {
     display: none;
+    transition: .2s;
 }
 
-aside.active h3 span, aside.active ul {
+aside li {
+}
+
+aside li a {
+    font-size: 14px;
+    color: var(--darkGray);
     display: flex;
-    font-size: 15px;
+    padding: 1.2rem;
+    margin: 0;
+    border-bottom: 1px solid #d2d4da;
+    transition: .2s;
+
+}
+
+.aside-menu > ul > li:first-of-type a {
+    border-top: 1px solid var(--brightGray);
+}
+
+aside li a:hover,
+aside li a.active {
+}
+
+.aside-title {
+    margin: 3rem 1.2rem 1rem;
+    font-size: 13px;
+    justify-content: flex-start;
+}
+
+.aside-menu > ul {
+    display: flex;
+}
+
+.aside-menu > ul li > a,
+.aside-menu > ul li > span {
+    border-bottom: 1px solid var(--brightGray);
+    color: var(--darkGray);
+    display: flex;
+    font-size: 14px;
+    padding: 1.2rem;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.aside-menu > ul li a:hover,
+.aside-menu > ul li .sub-menu:hover ,
+.aside-menu > ul li .sub-menu.active {
+    background-color: var(--brightGray);
+}
+
+.sub-menu.active + ul {
+    display: flex;
+    background-color: var(--brightGray);
+}
+
+.sub-menu.active + ul li a {
+    padding: .7rem 2rem;
+}
+
+.sub-menu.active + ul li a:hover,
+.sub-menu.active + ul li a.active {
+    background-color: var(--darkGray);
+    color: white
 }
 
 input[type="radio"] {
@@ -195,17 +232,19 @@ section {
 }
 
 .tabs a {
-    color: var(--mediumGray);
+    color: var(--darkGray);
     display: flex;
-    padding: 1rem 2rem;
+    padding: .8rem 1.6rem;;
     border-radius: .3rem;
     position: relative;
+    border: 1px solid var(--brightGray);
     transition: background-color .2s;
 }
 
 .tabs a:hover,
 .tabs a.active {
     color: white;
+    border: 1px solid var(--primaryColor);
     background: var(--primaryColor);
 }
 
@@ -228,8 +267,8 @@ section {
 
 .search .submit-search svg {
     fill: white;
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .search section {
@@ -379,6 +418,7 @@ section {
     background-color: white;
     border-radius: .5rem;
     padding: 3rem 1rem;
+    overflow: hidden;
 }
 
 .charts {
@@ -397,7 +437,8 @@ section {
 .wrapper-chart {
     display: flex;
     flex-direction: column;
-    width: 30%
+    padding: 0 .5rem;
+    flex: 1 1 33.333%
 }
 
 .chart {
@@ -409,11 +450,117 @@ section {
     background: var(--secondaryColor);
 }
 
+.content-view.geo-chart {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.content-view.geo-chart .search {
+    flex: 0 0 auto;
+    padding: 1rem
+}
+
+.content-view.geo-chart .filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-view.geo-chart .filter {
+    display: flex;
+    align-items: center;
+}
+
+.content-view.geo-chart .filter > * {
+    margin: 0 1rem;
+}
+
+.content-view.geo-chart .filter-vaccine-type {
+    flex: 1 1 auto
+}
+
+.content-view.geo-chart .filter-vaccine-type li {
+    flex: 0 0 auto
+}
+
+.content-view.geo-chart .filter-period {
+    flex: 0 0 auto
+}
+
+.content-view.geo-chart .filter h3 {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+    text-align: right;
+    margin-right: 1rem
+}
+
+.content-view.geo-chart .filter-period > div {
+    display: flex;
+    align-items: center;
+}
+
+.content-view.geo-chart .submit-search {
+    padding: .5rem 2rem;
+}
+
+.content-view.geo-chart .result-view {
+    margin-left: 0;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.content-view.geo-chart .chart-container {
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.content-view.geo-chart .wrapper-chart {
+    overflow: hidden;
+    height: 100%;
+}
+
+.content-view.geo-chart .result-view h5 {
+    font-family: NanumSquare;
+    font-size: 16px;
+    line-height: 2;
+    flex: 0 0 auto;
+}
+
+.content-view.geo-chart .chart {
+    flex: 0 0 auto;
+    height: auto;
+}
+
+.content-view.geo-chart .table {
+    margin: 2rem auto 0;
+    flex: 1 1 auto;
+    overflow-y: auto;
+}
+
+.content-view.geo-chart table th:nth-of-type(1),
+.content-view.geo-chart table td:nth-of-type(1) {
+    width: 100px;
+}
+
+.content-view.geo-chart table th:nth-of-type(2),
+.content-view.geo-chart table td:nth-of-type(2) {
+    display: none
+}
+
+.google-visualization-table .gradient {
+    background: var(--lightGray) !important;
+}
+
+.google-visualization-table-tr-over {
+    background-color: var(--brightBlue) !important;
+}
+
 
 @media screen and (max-width: 768px) {
     .content {
 
     }
+
     .content-title {
         flex-direction: column;
     }
@@ -425,7 +572,7 @@ section {
 
     .tabs li {
         flex: 0 1 50%;
-        margin:0
+        margin: 0
     }
 
     .tabs a {
