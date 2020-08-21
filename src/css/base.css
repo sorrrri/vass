@@ -44,7 +44,7 @@
     --brightBlue: #e7f3ff;
     --brightPurple: #8f93e0;
     --lightGray: #eff2f7;
-    --brightGray: #dbe1ea;
+    --brightGray: #d2dae6;
     --mediumGray: #b8bfcc;
     --darkGray: #85899a;
 }
@@ -55,10 +55,11 @@ svg {
 
 body {
     --color-text: #38373e;
-    --color-background: #f1f5f9;
+    --color-background: #dce2ec;
     --color-aside-background: #c3cfdc;
+    --color-main-background: #f1f5f9;
     --color-link: #4b4b4b;
-    --color-link-hover: #4b4b4b;
+    --color-link-hover: 4b4b4b;
     --color-intro-bg: #0e0e0e;
     --modal-color-text: #27292d;
     color: var(--color-text);
@@ -92,7 +93,7 @@ canvas {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-bg);
+    background: var(--color-background);
 }
 
 .js .loading::after {
@@ -156,6 +157,7 @@ ul {
     list-style: none;
     display: flex;
 }
+
 img {
     display: block;
     width: 100%;
@@ -270,7 +272,7 @@ header {
 
 header a {
     display: flex;
-    padding: 1rem .5rem;
+    padding: 1.5rem .5rem;
 }
 
 header .menu {
@@ -287,17 +289,19 @@ header .menu {
 header .menu a {
     font-size: 13px;
 }
+
 header .logo {
+    line-height: 1;
 }
 
 main {
     flex: 1 1 auto;
     display: flex;
-    background: var(--color-background);
 }
 
 aside {
-    background-color: var(--primaryColor);
+    flex-direction: column;
+    transition: .0s;
 }
 
 aside ul {
@@ -350,13 +354,17 @@ aside li {
 
 .content-view {
     flex: 0 1 auto;
-    padding: 0 1rem 1rem 1rem;
+    padding: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     max-width: 1200px;
     width: 100%;
     position: relative;
+}
+
+.content-title + .content-view {
+    padding: 0 1rem 1rem 1rem;
 }
 
 .wrapper {
@@ -371,9 +379,17 @@ aside li {
 
 .input-container {
     display: flex;
-    flex-direction: column;
+    align-content: center;
     margin-bottom: 1rem;
     position: relative;
+}
+
+.input-container label {
+    align-self: center;
+}
+
+.input-container input {
+    flex: 1 1 auto
 }
 
 .input-container div {
@@ -475,6 +491,7 @@ aside li {
 }
 
 .checkbox label {
+    flex: 1 1 auto !important;
     color: #AAA;
     display: flex;
     align-items: center;
@@ -495,20 +512,23 @@ aside li {
     margin-right: 3px;
     width: 15px;
     height: 15px;
-    background-color: #EEE;
+    background-color: white;
 }
 
 .checkbox input:checked + label:after {
     content: '';
+    width: 10px;
+    height: 6px;
     position: absolute;
+    top: 6px;
     left: 3px;
-    top: 10px;
-    background: white;
-    width: 2px;
-    height: 2px;
-    box-shadow: 2px 0 0 #36299f, 4px 0 0 #36299f, 4px -2px 0 #36299f, 4px -4px 0 #36299f, 4px -6px 0 #36299f, 4px -8px 0 #36299f;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg)
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 1;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 
@@ -595,6 +615,8 @@ select::-ms-expand {
     box-sizing: border-box;
     border-radius: .3rem;
     background-color: white;
+    padding-right: 2rem;
+    border: 1px solid #EEE
 }
 
 .selectbox::before {
@@ -604,11 +626,11 @@ select::-ms-expand {
     right: 1rem;
     width: 0;
     height: 0;
-    margin-top: -10px;
+    margin-top: -6px;
     border: solid black;
     border-width: 0 1px 1px 0;
     display: inline-block;
-    padding: 6px;
+    padding: 3px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
@@ -650,6 +672,11 @@ select::-ms-expand {
 .table .th span {
     font: 12px/1.5 'Comfortaa';
     color: slategray !important;
+}
+
+.table .list {
+    height: 100%;
+    overflow-y: auto;
 }
 
 
@@ -704,6 +731,48 @@ select::-ms-expand {
     left: 16px;
 }
 
+/* Toggle Checkbox */
+
+.toggle-activation {
+    flex: 1 1 100%;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.toggle-activation .toggle {
+    display: flex;
+    width: 40px;
+    height: 80%;
+}
+
+.toggle-activation label {
+    flex: 0 0 auto !important;
+    margin-right: .5rem;
+}
+
+.toggle-activation .toggle-button {
+    height: 20px;
+    border-radius: 30px;
+    flex: 0 0 100% !important;
+    background-color: orangered;
+}
+
+.toggle-activation .toggle-feature {
+    top: -2px;
+    left: -2px;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.toggle-activation .toggle-checkbox:checked + .toggle-button {
+    background-color: lightseagreen;
+}
+
+.toggle-activation .toggle-checkbox:checked + .toggle-button > * {
+    left: 16px;
+}
 
 
 /* =====================================================
@@ -767,6 +836,7 @@ select::-ms-expand {
     z-index: 5;
     transition: opacity .4s;
 }
+
 .modal section {
     padding: 0 1rem 1rem 1rem;
     flex: 1 1 auto;
@@ -778,7 +848,6 @@ select::-ms-expand {
     display: flex;
     justify-content: space-between;
 }
-
 
 
 @media screen and (max-width: 768px) {
@@ -821,8 +890,9 @@ select::-ms-expand {
 /* =====================================================
    Dark mode
    ===================================================== */
-.dark-mode {
-    background-color: var(--darkmodePrimaryColor);
+.dark-mode,
+.dark-mode main {
+    background-color: var(--darkmodePrimaryColor) !important;
     color: white;
 }
 
@@ -850,7 +920,11 @@ select::-ms-expand {
 }
 
 .dark-mode header {
-    border-color: var(--darkmodeSecondaryColor);
+    border-color: var(--darkmodeSecondaryColor) !important;
+}
+
+.dark-mode aside {
+    background-color: var(--darkmodeSecondaryColor) !important;
 }
 
 .dark-mode .menu {
