@@ -47,6 +47,7 @@ const asideSubMenu = document.getElementsByClassName('sub-menu')
 if (aside) {
     asideMenu.addEventListener('click', () => {
         aside.classList.toggle('active')
+        setMyCookie();
         location.reload()
     })
 
@@ -58,5 +59,4 @@ if (aside) {
 
     Array.from(asideSubMenu).forEach(asideSubMenu => asideSubMenu.addEventListener('click', openSubMenu))
 
-    setMyCookie();
 }
