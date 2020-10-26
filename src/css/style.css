@@ -2,6 +2,13 @@ h4 {
     font-family: NanumSquare;
 }
 
+textarea {
+    display: flex;
+    flex: 1 1 auto;
+    border: 1px solid #DDD;
+    height: 150px;
+}
+
 .container {
     background: var(--color-background);
     flex-direction: column;
@@ -85,11 +92,12 @@ aside .aside-toggle-menu svg:last-of-type {
 
 aside .aside-icon-menu {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
 }
 
-aside .aside-icon-menu li {
+aside .aside-icon-menu a {
     display: flex;
     justify-content: center;
     align-self: center;
@@ -102,21 +110,18 @@ aside .aside-icon-menu li {
     transition: background-color .2s;
 }
 
-aside .aside-icon-menu a {
-    border-bottom: 0;
-}
 
-aside .aside-icon-menu li svg {
+aside .aside-icon-menu a svg {
     align-self: center;
 }
 
-aside .aside-icon-menu li:hover,
-aside .aside-icon-menu li.active {
+aside .aside-icon-menu a:hover,
+aside .aside-icon-menu a.active {
     background: rgba(255,255,255,.1);
 }
 
-aside .aside-icon-menu li:hover svg,
-aside .aside-icon-menu li.active svg {
+aside .aside-icon-menu a:hover svg,
+aside .aside-icon-menu a.active svg {
     fill: var(--secondaryColor);
 }
 
@@ -276,6 +281,36 @@ section {
     max-width: none;
     justify-content: flex-start;
     overflow: hidden;
+}
+
+.table .row.th {
+
+}
+
+.table .row.th li {
+    font-family: Comfortaa;
+    color: slategray;
+    font-size: 13px;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    margin: 0 auto .5rem;
+    border-radius: .5rem;
+}
+
+.row li {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.edit {
+    flex-direction: column;
 }
 
 
@@ -534,7 +569,8 @@ section {
 }
 
 .content-title {
-    margin-top: .7rem
+    margin-top: .7rem;
+    min-height: 60px;
 }
 
 .content-view.filters-top {
@@ -700,20 +736,166 @@ section {
     right: 5px;
 }
 
-.user-list .row span:nth-child(1) {
+
+
+
+/* ============================================================
+   조작적 정의
+   ============================================================ */
+.operational-definition-list .row li:nth-of-type(1) {
+    width: 10%
+}
+
+.operational-definition-list .row li:nth-of-type(2) {
+    width: 10%
+}
+
+.operational-definition-list .row li:nth-of-type(3) {
+    width: 10%
+}
+
+.operational-definition-list .row li:nth-of-type(4) {
+    width: 15%
+}
+
+.operational-definition-list .row li:nth-of-type(5) {
+    width: 25%
+}
+
+.operational-definition-list .row li:nth-of-type(6) {
+    width: 20%
+}
+
+.operational-definition-list .row li:nth-of-type(7) {
+    width: 10%
+}
+
+
+.table-diagnosis .row li:nth-of-type(1) {
+    width: 20%
+}
+
+.table-diagnosis .row li:nth-of-type(2) {
+    width: 40%
+}
+
+.table-diagnosis .row li:nth-of-type(3) {
+    width: 30%;
+    justify-content: center;
+}
+
+.table-diagnosis .row li:nth-of-type(4) {
+    width: 10%
+}
+
+
+
+
+/* ============================================================
+   Admin
+   ============================================================ */
+
+.admin {
+    background: rgb(65 75 91);
+    color: white !important;
+}
+
+.admin a {
+    color: rgba(255, 255, 255, .7);
+    transition: color .2s;
+}
+
+.admin a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.admin svg {
+    fill: white;
+}
+
+.admin .content-view {
+    background: rgb(65 75 91);
+}
+
+.admin main header {
+    flex-direction: row;
+    align-items: center;
+}
+
+.admin .row {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+.admin label {
+    background-color: rgba(255, 255, 255, .1) !important;
+}
+
+.admin .input-title,
+.admin label {
+    color: rgba(255, 255, 255, .7);
+}
+
+.admin input {
+    background-color: rgba(255, 255, 255, .1);
+    color: white;
+}
+
+.input-title {
+    flex: 0 0 120px;
+    color: slategray;
+    font-family: Comfortaa, NanumSquare;
+    font-size: 13px;
+}
+
+.datepicker {
+    border: 1px solid #EEE
+}
+
+.input-select {
+    flex: 1 1 auto;
+    display: flex;
+}
+
+input[type="radio"] + label {
+    min-width: 36px;
+    display: flex;
+    justify-content: center;
+    margin-right: .5rem;
+    border-radius: .3rem;
+    background-color: #F3F6F9;
+    padding: .4rem 1rem;
+    transition: background-color .2s;
+}
+
+input[type="radio"] + label::before {
+    content: none;
+}
+
+input[type="radio"] + label:hover,
+input[type="radio"]:checked + label {
+    background-color: var(--secondaryColor) !important;
+    color: white;
+    border: 0
+}
+
+.user-list .row li:nth-child(1) {
     width: 10%;
 }
 
-.user-list .row span:nth-child(2) {
+.user-list .row li:nth-child(2) {
     width: 20%
 }
 
-.user-list .row span:nth-child(3) {
+.user-list .row li:nth-child(3) {
     width: 20%
 }
 
-.user-list .row span:nth-child(4) {
+.user-list .row li:nth-child(4) {
     width: 50%
+}
+
+.list .content-view {
+    overflow-y: auto;
 }
 
 .user-edit {
@@ -745,6 +927,9 @@ section {
 .checkbox {
     margin: 10px 3rem 10px 0 !important;
 }
+
+
+
 
 @media screen and (max-width: 768px) {
     .content {

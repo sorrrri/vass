@@ -53,11 +53,16 @@ if (aside) {
 
     function openSubMenu(e) {
         const subMenu = e.target;
-        console.log(subMenu)
         subMenu.classList.toggle('active')
         setMyCookie();
     }
 
     Array.from(asideSubMenu).forEach(asideSubMenu => asideSubMenu.addEventListener('click', openSubMenu))
 
+}
+
+const selectCategory = document.getElementsByName("select-category").value
+
+if(selectCategory === "HOI") {
+    console.log("test")
 }
