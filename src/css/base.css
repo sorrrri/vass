@@ -64,7 +64,7 @@ body {
     --color-aside-background: #c3cfdc;
     --color-main-background: #f1f5f9;
     --color-link: #4b4b4b;
-    --color-link-hover: 4b4b4b;
+    --color-link-hover: 4 b4b4b;
     --color-intro-bg: #0e0e0e;
     --modal-color-text: #27292d;
     color: var(--color-text);
@@ -125,6 +125,8 @@ a {
     text-decoration: none;
     color: var(--color-link);
     outline: none;
+    display: flex;
+    align-items: center;
 }
 
 a:hover,
@@ -143,6 +145,23 @@ a:focus {
     opacity: 0;
 }
 
+.input-date {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.datepicker {
+    text-indent: 2rem;
+}
+
+.datepicker + svg {
+    position: absolute;
+    left: .5rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: #a3a6a9;
+}
 
 .container {
     padding: 0; /* bootstrap */
@@ -227,7 +246,13 @@ label {
     color: slategray;
 }
 
+.buttons {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 button {
+    font-family: NanumSquare;
     display: flex;
     border: 0;
     background: var(--primaryColor);
@@ -235,21 +260,36 @@ button {
     border-radius: .3rem;
     padding: .5rem 1rem;
     cursor: pointer;
+    position: relative;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: background-color .2s;
+}
+
+button:hover::before {
+    background-color: rgba(255, 255, 255, .1);
 }
 
 .btn-submit {
     background-color: var(--primaryColor);
-    padding: .7rem 2rem
+    padding: .5rem 3rem !important;
 }
 
 .btn-cancel {
-    background-color:#EEE;
-    color: var(--darkPurple)
+    background-color: rgba(0,0,0,.1);
+    color: #333
 }
 
 .btn-modify {
     background-color: var(--secondaryColor);
-    color: var(--darkPurple);
+    color: #333;
     width: 2rem;
     height: 2rem;
     padding: 0;
@@ -598,31 +638,32 @@ input[type="radio"] + label:empty:before {
 
 
 /*selectbox*/
-select {
-    display: flex;
-    flex: 1 1 auto;
-    -webkit-appearance: none;
-    padding: .7rem;
-    height: auto;
-    border: 0;
-    font: 15px/1.5 'NanumSquare';
-    background-color: white;
-    outline: 0;
-    box-sizing: border-box;
-}
-
-select::-ms-expand {
-    display: none;
-}
-
 .selectbox {
     position: relative;
     background-color: white;
     box-sizing: border-box;
     border-radius: .3rem;
     background-color: white;
-    padding-right: 2rem;
-    border: 1px solid #EEE
+    margin: .2rem;
+    border: 1px solid #EEE;
+}
+
+select {
+    display: flex;
+    flex: 1 1 auto;
+    -webkit-appearance: none;
+    padding: .5rem 3rem .5rem .7rem;
+    height: auto;
+    border: 0;
+    font: 15px/1.5 'NanumSquare';
+    background-color: white;
+    outline: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+select::-ms-expand {
+    display: none;
 }
 
 .selectbox::before {
@@ -791,24 +832,23 @@ select::-ms-expand {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 2rem;
-    background: white;
-    flex-direction: column;
     border-radius: .5rem;
     box-sizing: border-box;
     overflow-x: hidden;
     overflow-y: auto;
-    cursor: default;
     transition: .25s;
     z-index: 10;
 }
 
-.modal {
-    color: var(--modal-color-text);
-    width: 50vw;
-    height: 50vh;
-    max-height: 60%;
-    overflow-y: auto;
+.modal.active {
+    padding: 2rem;
+    background: white;
+    justify-content: space-between;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    min-width: 30vw;
+    min-height: 20vh;
 }
 
 .modal.hide {
@@ -826,21 +866,8 @@ select::-ms-expand {
     flex-direction: column;
 }
 
-.overlay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.3);
-    transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 5;
-    transition: opacity .4s;
+.modal button {
+    margin-left: .5rem;
 }
 
 .modal section {
@@ -853,6 +880,23 @@ select::-ms-expand {
     padding: 1rem;
     display: flex;
     justify-content: space-between;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    transition: opacity .4s;
 }
 
 
