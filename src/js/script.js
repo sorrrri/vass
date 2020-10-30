@@ -63,42 +63,138 @@ const tableDiagnosis = document.querySelector(".table-diagnosis")
 const buttonAddDiagnosis = document.querySelector(".row-diagnosis .btn-plus")
 
 function createDiagnosisElement() {
-  console.log("test")
   const ul = document.createElement("ul");
   ul.setAttribute('class', 'row');
-  ul.innerHTML =`
-                          <li><input type="text" value="C46.2, C25.3"></li>
-                          <li>Kaposi sarcoma of palate diplorioit of palate</li>
-                          <li class="input-select">
-                              <div>
-                                  <input value="HOI" type="radio" name="select-diagnosis" id="diagnosis">
-                                  <label for="diagnosis">주+부상병</label>
-                              </div>
-                              <div>
-                                  <input value="VOI" type="radio" name="select-diagnosis" id="mainDiagnosis">
-                                  <label for="mainDiagnosis">주상병</label>
-                              </div>
-                              <div>
-                                  <input value="condition" type="radio" name="select-diagnosis" id="subDiagnosis">
-                                  <label for="subDiagnosis">부상병</label>
-                              </div>
-                          </li>
-                          <li>
-                              <a class="delete">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-                                      <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
-                                  </svg>
-                              </a>
-                          </li>
+  ul.innerHTML = `
+                <li><input type="text"></li>
+                <li><input type="text"></li>
+                <li class="input-select">
+                    <div>
+                        <input value="HOI" type="radio" name="select-diagnosis" id="diagnosis">
+                        <label for="diagnosis">주+부상병</label>
+                    </div>
+                    <div>
+                        <input value="VOI" type="radio" name="select-diagnosis" id="mainDiagnosis">
+                        <label for="mainDiagnosis">주상병</label>
+                    </div>
+                    <div>
+                        <input value="condition" type="radio" name="select-diagnosis" id="subDiagnosis">
+                        <label for="subDiagnosis">부상병</label>
+                    </div>
+                </li>
+                <li class="elem-delete">
+                    <a class="ico-delete">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                             viewBox="0 0 24 24">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                        </svg>
+                    </a>
+                </li>
 `
-
   tableDiagnosis.appendChild(ul)
+}
+
+
+const tableDiagnosis2 = document.querySelector(".table-diagnosis-02")
+const buttonAddDiagnosis2 = document.querySelector(".row-diagnosis-02 .btn-plus")
+
+function createDiagnosisElement2() {
+  const ul = document.createElement("ul");
+  ul.setAttribute('class', 'row');
+  ul.innerHTML = `
+                <li><input type="text"></li>
+                <li><input type="text"></li>
+                <li class="input-select">
+                    <div>
+                        <input value="HOI" type="radio" name="select-diagnosis" id="diagnosis-02">
+                        <label for="diagnosis-02">주+부상병</label>
+                    </div>
+                    <div>
+                        <input value="VOI" type="radio" name="select-diagnosis" id="mainDiagnosis-02">
+                        <label for="mainDiagnosis-02">주상병</label>
+                    </div>
+                    <div>
+                        <input value="condition" type="radio" name="select-diagnosis" id="subDiagnosis-02">
+                        <label for="subDiagnosis-02">부상병</label>
+                    </div>
+                </li>
+                <li class="input-select input-days">
+                    <input type="number">
+                    <span>일 전</span>
+                    <input type="number">
+                    <span>일 후</span>
+                </li>
+                <li>
+                    <div>
+                        <input type="radio" name="select-occur" id="occurYes">
+                        <label for="occurYes">발생</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="select-occur" id="occurNo">
+                        <label for="occurNo">없음</label>
+                    </div>
+                </li>
+                <li class="elem-delete">
+                    <a class="ico-delete">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                             viewBox="0 0 24 24">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                        </svg>
+                    </a>
+                </li>
+`
+  tableDiagnosis2.appendChild(ul)
+}
+
+
+const tableDiagnosis3 = document.querySelector(".table-diagnosis-03")
+const buttonAddDiagnosis3 = document.querySelector(".row-diagnosis-03 .btn-plus")
+
+function createDiagnosisElement3() {
+  const ul = document.createElement("ul");
+  ul.setAttribute('class', 'row');
+  ul.innerHTML = `
+                <li><input type="text"></li>
+                <li><input type="text"></li>
+                <li class="input-select input-days">
+                    <input type="text">
+                    <span>일 전</span>
+                    <input type="text">
+                    <span>일 후</span>
+                </li>
+                <li class="elem-delete">
+                    <a class="ico-delete">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                             viewBox="0 0 24 24">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                        </svg>
+                    </a>
+                </li>
+`
+  tableDiagnosis3.appendChild(ul)
 }
 
 if (tableDiagnosis) {
   buttonAddDiagnosis.addEventListener("click", createDiagnosisElement)
+  buttonAddDiagnosis2.addEventListener("click", createDiagnosisElement2)
+  buttonAddDiagnosis3.addEventListener("click", createDiagnosisElement3)
 }
 
+// Delete Elements
+/*function handleDeleteRow(e) {
+  const button = e.target
+  const tableDiagnosis = document.querySelector(".table-diagnosis")
+
+  console.log(button.parentNode)
+  const row = button.parentNode
+  tableDiagnosis.removeChild(row)
+}
+
+let elemDelete = document.querySelector('.elem-delete')
+
+if(elemDelete) {
+  elemDelete.addEventListener('click', handleDeleteRow)
+}*/
 
 
 const overlay = document.querySelector(".overlay")
@@ -138,9 +234,10 @@ if (queryRefresh) {
     modalQueryRefresh.classList.add("active")
   })
   QueryRefreshSubmit.addEventListener('click', () => {
-    overlay.classList.remove("active")
-    modalQueryRefresh.classList.remove("active")
+    overlay.classList.remove('active')
+    modalQueryRefresh.classList.remove('active')
     queryTextarea.value = ""
   })
   QueryRefreshCancel.addEventListener('click', hideModal)
 }
+

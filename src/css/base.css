@@ -236,7 +236,7 @@ input[type="password"] {
 }
 
 input:focus, select:focus, button:focus {
-    outline: 0;
+    border: 1px solid var(--primaryColor) !important;
 }
 
 label {
@@ -685,8 +685,6 @@ select::-ms-expand {
 /*table*/
 .table {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 1rem;
 }
 
 .table .row {
