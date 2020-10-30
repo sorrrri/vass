@@ -13,6 +13,12 @@ input[type="number"] {
     border: 1px solid #CCC
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 textarea {
     font-family: NanumSquare;
     display: flex;
@@ -633,7 +639,6 @@ section {
 }
 
 .content-title {
-    margin-top: .7rem;
     min-height: 60px;
 }
 
@@ -839,6 +844,27 @@ section {
     width: 10%
 }
 
+.category-information {
+    margin: 1rem 0 0;
+    color: slategray;
+}
+
+input[type="radio"]#HOI:checked ~ .category-information::before {
+    content: 'HOI: Health of Interest (HOI) 연구 대상이 되는 질병을 정의하는 #$@*&#(*&%'
+}
+
+input[type="radio"]#VOI:checked ~ .category-information::before {
+    content: 'VOI: Health of Interest (HOI) 연구 대상이 되는 질병을 정의하는 #$@*&#(*&%'
+}
+
+input[type="radio"]#condition:checked ~ .category-information::before {
+    content: 'condition: Health of Interest (HOI) 연구 대상이 되는 질병을 정의하는 #$@*&#(*&%'
+}
+
+input[type="radio"]#drugExposure:checked ~ .category-information::before {
+    content: 'drugExposure: Health of Interest (HOI) 연구 대상이 되는 질병을 정의하는 #$@*&#(*&%'
+}
+
 
 [class*="row-diagnosis"] .row.th + .row {
     border-top: 1px solid #eee
@@ -918,7 +944,7 @@ section {
     position: relative;
 }
 
-.row-query button {
+.row-query .buttons button {
     background-color: transparent;
     position: absolute;
     top: 1.5rem;
@@ -933,7 +959,7 @@ section {
     transition: background-color .2s;
 }
 
-.row-query button:hover {
+.row-query .buttons button:hover {
     background-color: #eee;
 }
 
@@ -943,6 +969,10 @@ section {
 
 .row-query button svg {
     fill: slategray;
+}
+
+.btn-query {
+    background-color: var(--secondaryColor);
 }
 
 .row-plus {
@@ -959,6 +989,29 @@ section {
 
 .modal-query-refresh {
 
+}
+
+.tooltip {
+    visibility: hidden;
+    max-width: 80%;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 15px 25px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+
+.btn-copy:hover ~ .tooltip {
+    visibility: visible;
+    opacity: 1;
 }
 
 /* ============================================================
@@ -1024,6 +1077,7 @@ section {
 .input-select {
     flex: 1 1 auto;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .input-days input {
@@ -1094,6 +1148,7 @@ input[type="radio"] + label::before {
 
 .edit input[type="radio"] + label,
 .admin input[type="radio"] + label {
+    font-family: 'NanumSquare';
     min-width: 36px;
     display: flex;
     justify-content: center;

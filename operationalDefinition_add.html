@@ -135,23 +135,15 @@
                 <div class="row">
                     <div class="input-title">Category</div>
                     <div class="input-select">
-                        <div>
-                            <input value="HOI" type="radio" name="select-category" id="HOI">
-                            <label for="HOI">HOI</label>
-                        </div>
-                        <div>
-                            <input value="VOI" type="radio" name="select-category" id="VOI">
-                            <label for="VOI">VOI</label>
-                        </div>
-                        <div>
-                            <input value="condition" type="radio" name="select-category" id="condition">
-                            <label for="condition">Condition</label>
-                        </div>
-                        <div>
-                            <input value="drugExposure" type="radio" name="select-category" id="drugExposure">
-                            <label for="drugExposure">Drug Exposure</label>
-                        </div>
-                        <span class="category-information"></span>
+                        <input value="HOI" type="radio" name="select-category" id="HOI">
+                        <label for="HOI">HOI</label>
+                        <input value="VOI" type="radio" name="select-category" id="VOI">
+                        <label for="VOI">VOI</label>
+                        <input value="condition" type="radio" name="select-category" id="condition">
+                        <label for="condition">Condition</label>
+                        <input value="drugExposure" type="radio" name="select-category" id="drugExposure">
+                        <label for="drugExposure">Drug Exposure</label>
+                        <small class="category-information"></small>
                     </div>
                 </div>
                 <div class="row row-diagnosis">
@@ -343,11 +335,11 @@
                 <div class="row row-query">
                     <div class="input-title">
                         <span>Query</span>
-                        <button>쿼리 생성</button>
+                        <button class="btn-query">쿼리 생성</button>
                     </div>
-                    <textarea class="query-textarea"></textarea>
+                    <textarea class="query-textarea" readonly></textarea>
                     <div class="buttons">
-                        <button>
+                        <button class="btn-copy">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
                                 <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
                             </svg>
@@ -357,6 +349,7 @@
                                 <path d="M9 13.5c-2.49 0-4.5-2.01-4.5-4.5S6.51 4.5 9 4.5c1.24 0 2.36.52 3.17 1.33L10 8h5V3l-1.76 1.76C12.15 3.68 10.66 3 9 3 5.69 3 3.01 5.69 3.01 9S5.69 15 9 15c2.97 0 5.43-2.16 5.9-5h-1.52c-.46 2-2.24 3.5-4.38 3.5z"/>
                             </svg>
                         </button>
+                        <div class="tooltip">Click to copy to clipboard</div>
                     </div>
                 </div>
             </div>

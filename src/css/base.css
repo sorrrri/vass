@@ -236,6 +236,10 @@ input[type="password"] {
 }
 
 input:focus, select:focus, button:focus {
+    outline: 0;
+}
+
+input:focus, select:focus {
     border: 1px solid var(--primaryColor) !important;
 }
 
@@ -261,6 +265,7 @@ button {
     padding: .5rem 1rem;
     cursor: pointer;
     position: relative;
+    user-select: none;
 }
 
 button::before {
@@ -586,7 +591,8 @@ input[type="radio"] {
 
 input[type="radio"] + label {
     cursor: pointer;
-    margin-right: .5rem
+    margin-right: .5rem;
+    user-select: none;
 }
 
 input[type="radio"] + label:before {

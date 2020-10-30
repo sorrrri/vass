@@ -53,11 +53,16 @@ if (aside) {
 
 }
 
-const selectCategory = document.getElementsByName("select-category").value
 
-if (selectCategory === "HOI") {
-  console.log("test")
+var selectedCategory = document.querySelector('input[name = "select-category"]:checked');
+
+if(selectedCategory.hasAttribute("checked")){  //Test if something was checked
+  alert(selectedCategory.value); //Alert the value of the checked.
+} else {
+  alert('Nothing checked'); //Alert, nothing was checked.
 }
+
+
 
 const tableDiagnosis = document.querySelector(".table-diagnosis")
 const buttonAddDiagnosis = document.querySelector(".row-diagnosis .btn-plus")
@@ -157,9 +162,9 @@ function createDiagnosisElement3() {
                 <li><input type="text"></li>
                 <li><input type="text"></li>
                 <li class="input-select input-days">
-                    <input type="text">
+                    <input type="number">
                     <span>일 전</span>
-                    <input type="text">
+                    <input type="number">
                     <span>일 후</span>
                 </li>
                 <li class="elem-delete">
@@ -199,45 +204,53 @@ if(elemDelete) {
 
 const overlay = document.querySelector(".overlay")
 
-const queryRefresh = document.querySelector(".btn-refresh")
-const queryTextarea = document.querySelector(".query-textarea")
-const modalActive = document.querySelector(".modal.active")
-const modalQueryRefresh = document.querySelector(".modal-query-refresh")
-const QueryRefreshSubmit = document.querySelector(".modal-query-refresh .btn-submit")
-const QueryRefreshCancel = document.querySelector(".modal-query-refresh .btn-cancel")
+function handleRemoveModal() {
+  const modalActive = document.querySelector(".modal.active")
 
-
-function createListElement() {
-  var li = document.createElement("li"); // creates an element "li"
-  li.appendChild(document.createTextNode(input.value)); //makes text from input field the li text
-  ul.appendChild(li); //adds li to ul
-  input.value = ""; //Reset text input field
-}
-
-function hideModal() {
   overlay.classList.remove("active")
-  modalQueryRefresh.classList.remove("active")
-
+  modalActive.classList.remove("active")
 }
 
-function addDiagnosisAfterClick() {
 
+const rowQuery = document.querySelector(".row-query")
+const buttonQuery = document.querySelector(".btn-query")
+
+const modalQueryRefresh = document.querySelector(".modal-query-refresh")
+
+
+function handleClickRefreshQuery() {
+  overlay.classList.add("active")
+  modalQueryRefresh.classList.add("active")
 }
 
-if (buttonAddDiagnosis) {
-  buttonAddDiagnosis.addEventListener("click", addDiagnosisAfterClick)
+function handleRefreshQuery() {
+  overlay.classList.remove('active')
+  modalQueryRefresh.classList.remove('active')
+  queryTextarea.value = ""
 }
 
-if (queryRefresh) {
-  queryRefresh.addEventListener('click', () => {
-    overlay.classList.add("active")
-    modalQueryRefresh.classList.add("active")
+const queryTextarea = document.querySelector(".query-textarea")
+const tooltip = document.querySelector(".tooltip")
+
+function handleCopyQuery() {
+  queryTextarea.select()
+  document.execCommand('copy')
+  tooltip.innerHTML = "Copied"
+}
+
+if (rowQuery) {
+  const buttonRefresh = document.querySelector(".btn-refresh")
+  const QueryRefreshSubmit = document.querySelector(".modal-query-refresh .btn-submit")
+  const QueryRefreshCancel = document.querySelector(".modal-query-refresh .btn-cancel")
+  // refresh query
+  buttonRefresh.addEventListener('click', handleClickRefreshQuery)
+  QueryRefreshSubmit.addEventListener('click', handleRefreshQuery)
+  QueryRefreshCancel.addEventListener('click', handleRemoveModal)
+
+  const buttonCopy = document.querySelector(".btn-copy")
+  // copy query
+  buttonCopy.addEventListener('click', handleCopyQuery)
+  buttonCopy.addEventListener('mouseout', () => {
+    tooltip.innerHTML = "Click to copy to clipboard"
   })
-  QueryRefreshSubmit.addEventListener('click', () => {
-    overlay.classList.remove('active')
-    modalQueryRefresh.classList.remove('active')
-    queryTextarea.value = ""
-  })
-  QueryRefreshCancel.addEventListener('click', hideModal)
 }
-
