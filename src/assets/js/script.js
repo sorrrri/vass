@@ -22,8 +22,8 @@ window.addEventListener('resize', function (event) {
 const aside = document.querySelector('aside')
 
 function setMyCookie() {
-  asideToggleCookie = $('aside').hasClass('active') ? 'isActive' : 'notActive';
-  asideSubmenuCookie = $('.sub-menu').hasClass('active') ? 'isActive' : 'notActive';
+  const asideToggleCookie = $('aside').hasClass('active') ? 'isActive' : 'notActive';
+  const asideSubmenuCookie = $('.sub-menu').hasClass('active') ? 'isActive' : 'notActive';
   $.cookie('asideToggleCookie', asideToggleCookie, {path: '/'});
   $.cookie('asideSubmenuCookie', asideSubmenuCookie, {path: '/'});
 }
