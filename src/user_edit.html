@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>백신 웹개발</title>
 
-    <script src="src/js/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="src/css/base.css">
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="container">
@@ -89,43 +89,71 @@
                 </ul>
             </div>
         </aside>
-        <div class="content">
+        <div class="content admin">
             <div class="content-title">
-                <h1>조작적 정의 상세보기</h1>
+                <h1>사용자 목록</h1>
                 <div class="button-container">
-                    <button class="btn-cancel" onclick="javascript:history.back()">목록으로</button>
+                    <button class="btn-submit">수정</button>
+                    <button class="btn-cancel" onclick="javascript:history.back()">취소</button>
                 </div>
             </div>
             <div class="content-view edit">
                 <div class="row">
-                    <div class="input-title">Category</div>
-                    <input type="text" value="HOI" readonly>
+                    <div class="input-title">ID</div>
+                    <input type="text" value="hong1234" readonly>
                 </div>
                 <div class="row">
-                    <div class="input-title">Created Date</div>
-                    <input type="text" value="2020-10-01" readonly>
+                    <div class="input-title">이름</div>
+                    <input type="text" value="홍길동">
                 </div>
                 <div class="row">
-                    <div class="input-title">Created User</div>
-                    <input type="text" value="홍길동" readonly>
+                    <div class="input-title">연락처</div>
+                    <input type="text" value="010 000 0000">
                 </div>
                 <div class="row">
-                    <div class="input-title">Expired Date</div>
-                    <input type="text" value="2020-10-31" readonly>
+                    <div class="input-title">소속</div>
+                    <input type="text" value="TOP">
                 </div>
                 <div class="row">
-                    <div class="input-title">Description</div>
-                    <textarea readonly>seizure 진단 받은 eventseizure 진단 받은 event</textarea>
+                    <div class="input-title">PW INIT</div>
+                    <input type="password" value="1234567890">
                 </div>
                 <div class="row">
-                    <div class="input-title">Query</div>
-                    <textarea readonly>select * sdfsdf</textarea>
+                    <div class="input-title">권한</div>
+                    <div class="input-select">
+                        <div>
+                            <input type="radio" name="select-authority" id="authority-1">
+                            <label for="authority-1">Full right</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="select-authority" id="authority-2" checked>
+                            <label for="authority-2">조작적 정의</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="select-authority" id="authority-3">
+                            <label for="authority-3">연구 설계</label>
+                        </div>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="input-title">관리자</div>
+                    <div class="input-select">
+                        <div>
+                            <input type="radio" name="select-master" id="master-1">
+                            <label for="master-1">예</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="select-master" id="master-2" checked>
+                            <label for="master-2">아니오</label>
+                        </div>
+                    </div>
+                </div>
+                <a href="" class="delete-user">계정 삭제</a>
             </div>
         </div>
     </main>
 </div>
-<script src="src/js/jquery.cookie.min.js"></script>
-<script src="src/js/script.js"></script>
+<script src="assets/js/jquery.cookie.min.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>

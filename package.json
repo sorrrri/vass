@@ -1,0 +1,27 @@
+{
+  "name": "vass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coralcat/vass.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coralcat/vass/issues"
+  },
+  "homepage": "https://github.com/coralcat/vass#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-nodemon": "^2.5.0",
+    "gulp-watch": "^5.0.1"
+  }
+}
